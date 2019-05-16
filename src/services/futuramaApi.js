@@ -3,6 +3,7 @@ export const getQuotes = (count = 10) => {
     .then(res => ([res.ok, res.json()]))
     .then(([ok, quotes]) => {
       if(!ok) throw 'Unable to fetch quotes';
+      console.log(quotes);
       return quotes;
     });
 };

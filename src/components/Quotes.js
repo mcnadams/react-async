@@ -17,7 +17,7 @@ function Quotes({ quotes }) {
 }
 
 Quotes.propTypes = {
-  quotes: PropTypes.array.isRequired
+  quotes: PropType.array.isRequired
 };
 
 export default Quotes;

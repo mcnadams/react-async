@@ -20,3 +20,5 @@ Quote.propTypes = {
     quote: PropTypes.string.isRequired
   }).isRequired
 };
+
+export default Quote;
