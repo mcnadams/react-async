@@ -4,9 +4,9 @@ import Quotes from '../components/Quotes';
 import { getQuotes } from '../services/futuramaApi';
 
 export default class TopQuotes extends PureComponent {
-  
+
   static propTypes = {
-    count: propTypes.number
+    count: PropTypes.number
   }
 
   static defaultProps = {
