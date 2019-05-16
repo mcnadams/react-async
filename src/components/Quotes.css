@@ -1,0 +1,23 @@
+.Quotes {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    background: lightgoldenrodyellow;
+    width: 25vw;
+    height: 50vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    
+    img {
+      max-height: 20vh;
+      max-width: 25vw;
+    }
+  }
+}
