@@ -1,0 +1,26 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Character from './Character';
+
+function Characters({ characters }) {
+  const characterLis = characters.map((character, i) => {
+    return (
+      <li key={i}>
+        <Character character={character} />
+      </li>
+    );
+  });
+
+  return (
+    <ul>
+      {characterList}
+    </ul>
+  );
+
+}
+
+Characters.PropTypes = {
+  characters: PropTypes.array
+};
+
+export default Characters;
