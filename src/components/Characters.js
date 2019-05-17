@@ -13,13 +13,13 @@ function Characters({ characters }) {
 
   return (
     <ul>
-      {characterList}
+      {characterLis}
     </ul>
   );
 
 }
 
-Characters.PropTypes = {
+Characters.propTypes = {
   characters: PropTypes.array
 };
 
