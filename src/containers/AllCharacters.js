@@ -34,7 +34,8 @@ export default class AllCharacters extends PureComponent {
     return (
       <section>
         <button onClick={() => { this.pageBack(); }} disabled={this.state.page <= 1}>prev page</button>
-        <button onClick={() => { this.pageForward(); }} disabled={this.state.page >= this.totalPages}>next page</button>
+        <button onClick={() => { this.pageForward(); }} disabled={this.state.page >= this.state.totalPages}>next page</button>
+        <p>page {this.state.page || 1 } of {this.state.totalPages || '*' }</p>
         <Characters characters={this.state.characters} />
       </section>
     );
