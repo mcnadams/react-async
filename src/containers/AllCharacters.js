@@ -4,12 +4,26 @@ import { getCharacters } from '../services/rickAndMortyApi';
 
 export default class AllCharacters extends PureComponent {
   state = {
-    characters: []
+    characters: [],
+    page: 1,
+    totalPages: 1
   }
 
   fetchCharacters = () => {
-    getCharacters()
-      .then(({ characters }) => this.setState(characters));
+    getCharacters(this.state.page)
+      .then(({ totalPages, characters }) => this.setState({ totalPages, characters }));
+  }
+
+  pageBack = () => {
+    const prevPage = this.state.page - 1;
+    this.setState({ page: prevPage });
+    return this.fetchCharacters();
+  }
+
+  pageForward = () => {
+    const nextPage = this.state.page + 1;
+    this.setState({ page: nextPage });
+    return this.fetchCharacters();
   }
 
   componentDidMount() {
@@ -17,7 +31,13 @@ export default class AllCharacters extends PureComponent {
   }
 
   render() {
-    return <Characters characters={this.state.characters} />;
+    return (
+      <section>
+        <button onClick={() => { this.pageBack(); }} disabled={this.state.page <= 1}>prev page</button>
+        <button onClick={() => { this.pageForward(); }} disabled={this.state.page >= this.totalPages}>next page</button>
+        <Characters characters={this.state.characters} />
+      </section>
+    );
   }
 
 }
